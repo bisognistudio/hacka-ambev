@@ -34,8 +34,16 @@ module.exports = function(app){
     res.render('mercado')
   })
 
+  app.get('/preco', function(req, res){
+    res.render('preco')
+  })
+
   app.get('/receita', function(req, res){
     res.render('receita')
+  })
+
+  app.get('/pesquisa', function(req, res){
+    res.render('pesquisa')
   })
 
   app.get('/get_beer/:beerName', function(req, res){
