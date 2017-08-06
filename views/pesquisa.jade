@@ -34,25 +34,13 @@ html(lang='en')
               a(href='badges.html') Components
             li
               a(href='collapsible.html') JavaScript
-    main.main-container-pesquisa
+    main(id='main_pesquisa' class='main-container-pesquisa')
       .row
         form.col.s12
           .input-field.col.s12
             i.material-icons.prefix search
             textarea#icon_prefix2.materialize-textarea
             label(for='icon_prefix2') Faça sua busca
-      .row
-        .row
-          .col.s12.m7
-            .card.horizontal(style='padding: 10px;')
-              .card-image(style='display: flex; align-items: center; justify-content: center;')
-                img(src='./images/engradado.jpg', alt='')
-              .card-stacked
-                .card-content
-                  h4 Nome Cerveja
-                  h5 Longneck
-                .card-action
-                  a(href='#', style=' color: red;') A partir de R$5,00 
   script(src='./javascripts/jquery.min.js')
   script(src='./stylesheets/materialize-css/dist/js/materialize.min.js')
 
@@ -71,7 +59,35 @@ html(lang='en')
 
         promise.then(function(result){
 
-          console.log(result)
+          $(result).each(function(index, value){
+
+            var html = '<div class="row">'
+              html += '<div class="row">'
+                html += '<div class="col s12 m7">'
+                  html += '<div class="card horizontal" style="padding: 10px;">'
+                    html += '<div class="card-image" style="display: flex; align-items: center; justify-content: center;">'
+                      //- html += '<img src="' + value.detalhes.imagem + '" />'
+                      html += '<img src="http://mthumbs.buscape.com.br/cerveja/brahma-extra-long-neck-355-ml-1-unidade_600x600-PU5d982_1.jpg" />'                      
+                      html += '<div class="card-stacked">'
+                        html += '<div class="card-content">'
+                          html += '<h4>'+value.title+'</h4>'
+                          html += '<h5>'+value.detalhes.estilo+'</h5>'
+                        html += '<div class="card-action">'
+                          html += '<a href="#" style="color: red;">A partir de '+value.mediumPrice+'</a>'
+                        html += '</div>'
+                      html += '</div>'
+                    html += '</div>'
+                  html += '</div>'
+                html += '</div>'
+              html += '</div>'
+            html += '</div>'
+
+            $('#main_pesquisa').append(html)
+            
+
+          });
+
+          $(".horizontal").load();
 
         })
 

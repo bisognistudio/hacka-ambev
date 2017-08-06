@@ -8,24 +8,6 @@ module.exports = function(app){
   // Custom Modules
   var db = require('./../libs/connectdb.js')()
 
-  global.registros_novos = []
-
-  // MODEL
-  // app.get('/recupera_perguntas', function(req, res){
-
-  //   var formIndex = req.query.formIndex;
-  
-  //   var Perguntas = db.model('Perguntas')
-
-  //   Perguntas.find({Form:formIndex}, function(err, docs){
-  //     if(err){
-  //       throw err
-  //     }
-  //     res.send(docs);
-  //   })
-
-  // })
-
   app.get('/facebook_auth', function(req, res){
     res.render('facebook_auth')
   })
