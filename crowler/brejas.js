@@ -149,6 +149,7 @@ var getBeersByName = function(beerName){
                     var sazonal = $('div.jrFieldRow.jrSazonal').find('.jrFieldValue').text()
                     var alcool = $('div.jrFieldRow.jrAlcool').find('.jrFieldValue').text()
                     var descricao = $('div.jrListingFulltext').text()
+                    var imagem = $('div.jrListingMainImage').find('a').eq(0).attr('href')
 
                     getPriceInExtra(title).then(function(price){
 
@@ -163,7 +164,8 @@ var getBeersByName = function(beerName){
                                 ingredientes : ingredientes,
                                 sazonal : sazonal,
                                 alcool: alcool,
-                                descricao:descricao
+                                descricao:descricao,
+                                imagem: imagem
                             },
                             mediumPrice: price
                         }
