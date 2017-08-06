@@ -30,8 +30,12 @@ module.exports = function(app){
     res.render('facebook_auth')
   })
 
-  app.get('/mercado', function(Req, res){
+  app.get('/mercado', function(req, res){
     res.render('mercado')
+  })
+
+  app.get('/receita', function(req, res){
+    res.render('receita')
   })
 
   app.get('/get_beer/:beerName', function(req, res){
