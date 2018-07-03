@@ -151,7 +151,7 @@ var getBeersByName = function(beerName){
                     var descricao = $('div.jrListingFulltext').text()
                     var imagem = $('div.jrListingMainImage').find('a').eq(0).attr('href')
 
-                    getPriceInExtra(title).then(function(price){
+                    // getPriceInExtra(title).then(function(price){
 
                         // Cria objeto JSON do beer
                         var beer = {
@@ -167,7 +167,7 @@ var getBeersByName = function(beerName){
                                 descricao:descricao,
                                 imagem: imagem
                             },
-                            mediumPrice: price
+                            // mediumPrice: price
                         }
 
                         beers.push(beer)
@@ -177,7 +177,7 @@ var getBeersByName = function(beerName){
                             resolve(beers)
                         }
 
-                    })
+                    // })
                      
                 })
                 
