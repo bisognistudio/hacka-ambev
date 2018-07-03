@@ -15,8 +15,7 @@
     "serve-favicon": "~2.3.0",
     "express-load": "*",
     "mysql": "*",
-    "express-session" : "*"
-
+    "express-session": "*"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
